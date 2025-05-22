@@ -18,14 +18,31 @@
       <p>Willkommen auf meinem privaten Technikblog. Hier findest du ausgewählte Inhalte, die ursprünglich auf LinkedIn erschienen sind (oder umgekehrt)– jetzt als Sammlung mit Stil.</p>
       <p>Die Seite wird über GitHub Pages gehostet, ohne Tracking, ohne Schnickschnack.</p>
     </section>
-    <section class="posts">
-  <h2>📝 Neuester Beitrag</h2>
-  <ul>
-    <li>
-      <a href="posts/sorafoundry.html">Sora klingt spannend? „Arrr, Grafikkarte von Kleinanzeigen ist abgeraucht!“</a>
-    </li>
-  </ul>
+
+    <section class="post-grid">
+  <h2>📚 Beiträge</h2>
+  <div id="postGrid" class="grid"></div>
 </section>
+
+<script>
+  fetch("posts/posts.json")
+    .then((res) => res.json())
+    .then((posts) => {
+      const container = document.getElementById("postGrid");
+
+      posts.forEach((post) => {
+        container.innerHTML += `
+          <article class="post-card">
+            <a href="posts/${post.slug}.html">
+              <img src="${post.image}" alt="${post.title}">
+              <h3>${post.title}</h3>
+              <p>${post.teaser}</p>
+            </a>
+          </article>
+        `;
+      });
+    });
+</script>
 
     <section class="link-section">
       <a href="rechtliches.html" class="button-link">Impressum & Datenschutz</a>
