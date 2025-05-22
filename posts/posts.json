@@ -1,4 +1,4 @@
-[
+op[
   {
     "slug": "../posts/soraonfoundry.html",
     "title": "Sora klingt spannend? „Arrr, Grafikkarte von Kleinanzeigen ist abgeraucht!“",
@@ -7,9 +7,10 @@
     "date": "2025-05-22"
   },
   {
-    "slug": "../posts/soraonfoundry.html",
-    "title": "Sora klingt spannend? „Arrr, Grafikkarte von Kleinanzeigen ist abgeraucht!“",
-    "image": "../img/post1.jpg",
-    "teaser": "Fragt unseren neuen Matrosen, das Eichhörnchen 🐿️🐿️"
+    "slug": "../posts/seccopilot.html",
+    "title": "Security Copilot wär cool – aber mein Konto sagt: „Arrr, bitte nicht!“",
+    "image": "../img/seccopilot.jpg",
+    "teaser": "🪙 Security Copilot clever nutzen"
+    "date": "2025-05-03"
   }
 ]
