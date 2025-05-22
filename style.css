@@ -25,10 +25,10 @@ body {
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.04);
   border-radius: var(--radius);
   max-width: var(--max-width);
-  overflow: hidden;
+  overflow-x: hidden; /* Scrollen wieder erlaubt */
 }
 
-/* Layout: Sidebar links, Inhalt rechts */
+/* Layout */
 .layout {
   display: flex;
   flex-direction: row;
@@ -41,10 +41,11 @@ body {
 .sidebar {
   width: 260px;
   flex-shrink: 0;
-  background: #fdfdfd;
+  background: #fbfbfb;
   padding: 1.5em;
   border-right: 1px solid #ddd;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+  min-height: 100%;
 }
 
 .profile-block {
@@ -75,6 +76,7 @@ body {
 /* Hauptinhalt */
 main.main-content {
   flex: 1;
+  padding-left: 1em; /* für visuelle Trennung */
 }
 
 header {
@@ -184,7 +186,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Mobile Anpassung */
+/* Responsive */
 @media (max-width: 850px) {
   .layout {
     flex-direction: column;
@@ -200,6 +202,7 @@ footer a:hover {
 
   main.main-content {
     width: 100%;
+    padding-left: 0;
   }
 
   body {
