@@ -13,7 +13,7 @@
     <aside class="sidebar">
       <div class="profile-block">
         <img src="img/profile.png" alt="Captain Azure" class="avatar" />
-        <h2>🧢 Captain Azure</h2>
+        <h2>🧂 Captain Azure</h2>
         <p>Cloud-Navigator, Serverless-Fan & Screenshot-Sammler.<br>  
            Lenkt das Schiff durch die Gewässer von Azure und KI.</p>
       </div>
@@ -44,7 +44,7 @@
       <div class="mobile-profiles">
         <div class="profile-block">
           <img src="img/profile.png" alt="Captain Azure" class="avatar" />
-          <h2>🧢 Captain Azure</h2>
+          <h2>🧂 Captain Azure</h2>
           <p>Cloud-Navigator, Serverless-Fan & Screenshot-Sammler.<br>
              Lenkt das Schiff durch die Gewässer von Azure und KI.</p>
         </div>
@@ -72,18 +72,20 @@
 
             posts.forEach((post) => {
               container.innerHTML += `
-                <article class="post-card">
-                  <a href="posts/${post.slug}">
+                <a href="posts/${post.slug}" class="post-card-link">
+                  <article class="post-card">
                     <div class="post-card-image">
                       <img src="${post.image}" alt="${post.title}">
                     </div>
-                  </a>
-                  <div class="post-text">
-                    <p class="post-date">${post.date}</p>
-                    <h3><a href="posts/${post.slug}">${post.title}</a></h3>
-                    <p>${post.teaser}</p>
-                  </div>
-                </article>
+                    <div class="post-text">
+                      <h3>${post.title}</h3>
+                      <p>${post.teaser}</p>
+                    </div>
+                    <div class="post-footer">
+                      <p class="post-date">🕓 ${post.date}</p>
+                    </div>
+                  </article>
+                </a>
               `;
             });
           });
@@ -92,7 +94,7 @@
   </div>
 
   <footer>
-    <p>© 2025 Captain Azure 🧢 & Matrose 🐿️ – <a href="rechtliches.html">Impressum & Datenschutz</a></p>
+    <p>© 2025 Captain Azure 🧂 & Matrose 🐿️ – <a href="rechtliches.html">Impressum & Datenschutz</a></p>
   </footer>
 
 </body>
