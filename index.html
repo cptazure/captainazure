@@ -40,7 +40,7 @@
         <p>Die Seite wird über GitHub Pages gehostet, ohne Tracking, ohne Schnickschnack.</p>
       </section>
 
-      <!-- Mobile-Profil-Ansicht (jetzt unter dem Intro) -->
+      <!-- Mobile-Profil-Ansicht -->
       <div class="mobile-profiles">
         <div class="profile-block">
           <img src="img/profile.png" alt="Captain Azure" class="avatar" />
@@ -77,10 +77,12 @@
                     <div class="post-card-image">
                       <img src="${post.image}" alt="${post.title}">
                     </div>
-                      <p class="post-date">${post.date}</p>
-                      <h3>${post.title}</h3>
-                      <p>${post.teaser}</p>
                   </a>
+                  <div class="post-text">
+                    <p class="post-date">${post.date}</p>
+                    <h3><a href="posts/${post.slug}">${post.title}</a></h3>
+                    <p>${post.teaser}</p>
+                  </div>
                 </article>
               `;
             });
