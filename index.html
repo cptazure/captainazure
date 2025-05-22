@@ -54,7 +54,7 @@
             posts.forEach((post) => {
               container.innerHTML += `
                 <article class="post-card">
-                  <a href="${post.slug}">
+                  <a href="posts/${post.slug}">
                     <img src="${post.image}" alt="${post.title}">
                     <h3>${post.title}</h3>
                     <p>${post.teaser}</p>
