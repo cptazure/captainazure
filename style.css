@@ -283,7 +283,16 @@ footer a:hover {
   }
 }
 .post-date {
-  font-size: 0.85em;
-  color: #888;
-  margin: 0.5em 1em 0 1em;
+  font-size: 0.8em;
+  color: #999;
+  position: relative;
+  margin: 0.5em 1em;
+  padding-left: 1.2em;
+}
+
+.post-date::before {
+  content: "🕓";
+  position: absolute;
+  left: 0;
+  top: 0;
 }
