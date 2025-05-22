@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Security Copilot stundenweise nutzen – Captain Azure</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🪙 Security Copilot clever nutzen</h1>
+    <p class="subtitle">Original veröffentlicht auf LinkedIn</p>
+  </header>
+
+  <main class="post-content">
+
+    <p><strong>🪙</strong><br>
+    Security Copilot wär cool – aber mein Konto sagt: „Arrr, bitte nicht!“</p>
+
+    <h2>🧢 Herausforderung:</h2>
+    <p>Du willst Microsoft Security Copilot nutzen – aber 24/7 für rund 4.000 € ist dir zu happig?<br>
+    Keine Sorge, Captain Azure hat einen cleveren Workaround für dich, ganz ohne Piraterie:</p>
+
+    <h2>🛠️ Der Trick: Stundenweise einsetzen</h2>
+    <ul>
+      <li>Erstelle eine eigene Resource Group → z. B. <code>rg-copilot-on-demand</code></li>
+      <li>Bau dir einen Power Automate Flow mit dem Schritt:<br>
+      👉 <strong>Create or update a template deployment</strong></li>
+    </ul>
+
+    <p>Pack da nur diese paar Zeilen rein:</p>
+
+    <pre><code>{
+  "$schema": "https://lnkd.in/eEuzYGCW",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.SecurityCopilot/capacities",
+      "apiVersion": "2023-12-01-preview",
+      "name": "sfseccopilotdev",
+      "location": "westeurope",
+      "properties": {
+        "numberOfUnits": "1",
+        "crossGeoCompute": "NotAllowed",
+        "geo": "EU"
+      }
+    }
+  ]
+}</code></pre>
+
+    <p>Den Flow teilst du z. B. in einem Teams-Kanal:</p>
+    <ul>
+      <li>→ Jeder, der Security Copilot braucht, drückt auf den Button – und los geht’s</li>
+      <li>→ Mach das Deployment entweder inkrementell oder prüfe vorher, ob die RG schon existiert</li>
+    </ul>
+
+    <p><strong>Löschen nicht vergessen!</strong></p>
+    <ul>
+      <li>→ Entweder automatisch per Zeitplan</li>
+      <li>→ Oder mit einem zweiten „Abriss“-Flow (Risk: „Mach ich später…“ 🫣)</li>
+    </ul>
+
+    <h2>💡 Ergebnis?</h2>
+    <ul>
+      <li>Copilot auf Abruf</li>
+      <li>Nur zahlen, wenn aktiv genutzt</li>
+      <li>Kein Dauervertrag</li>
+      <li>Ideal für punktuelle Analysen, Audits, Krisen</li>
+    </ul>
+
+    <h2>🧭 Captain’s Fazit:</h2>
+    <blockquote>
+      Warum ein ganzes Monatsabo zahlen,<br>
+      wenn du auch auf Stundenbasis navigieren kannst?
+    </blockquote>
+
+    <p>Ok, Controller hassen diesen Trick – außer sie arbeiten bei dir 😇</p>
+
+    <p>Mit Azure + ein bisschen Automatisierung kannst du Security Copilot ganz flexibel andocken – budgetfreundlich und einsatzbereit, wenn’s wirklich drauf ankommt.</p>
+
+    <p><em>Logbuch-Eintrag abgeschlossen.<br>– Captain Azure ⚓️</em></p>
+
+    <p><strong>#SecurityCopilot #AzureAutomation #ARMTemplates #PowerAutomate #CloudSparen #MicrosoftSecurity #CaptainAzure #SecurityHacks #DevSecOps #LowBudgetHighImpact #SecurityOnDemand #CloudGovernance</strong></p>
+
+    <p><a href="../index.html">← Zurück zur Startseite</a></p>
+
+  </main>
+
+</body>
+</html>
