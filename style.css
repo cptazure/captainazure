@@ -282,3 +282,8 @@ footer a:hover {
     max-height: 120px;
   }
 }
+.post-date {
+  font-size: 0.85em;
+  color: #888;
+  margin: 0.5em 1em 0 1em;
+}
