@@ -9,7 +9,7 @@
 <body>
 
   <div class="layout">
-    <!-- Sidebar (links) -->
+    <!-- Sidebar (nur Desktop) -->
     <aside class="sidebar">
       <div class="profile-block">
         <img src="img/profile.png" alt="Captain Azure" class="avatar" />
@@ -17,9 +17,7 @@
         <p>Cloud-Navigator, Serverless-Fan & Screenshot-Sammler.<br>  
            Lenkt das Schiff durch die Gewässer von Azure und KI.</p>
       </div>
-
       <hr>
-
       <div class="profile-block">
         <img src="img/eichhoernchen.png" alt="Eichhörnchen" class="avatar" />
         <h2>🐿️ Matrose-Eichhörnchen</h2>
@@ -28,8 +26,27 @@
       </div>
     </aside>
 
-    <!-- Hauptinhalt (rechts) -->
+    <!-- Hauptinhalt -->
     <main class="main-content">
+
+      <!-- Mobile-Profil-Ansicht -->
+      <div class="mobile-profiles">
+        <div class="profile-block">
+          <img src="img/profile.png" alt="Captain Azure" class="avatar" />
+          <h2>🧢 Captain Azure</h2>
+          <p>Cloud-Navigator, Serverless-Fan & Screenshot-Sammler.<br>
+             Lenkt das Schiff durch die Gewässer von Azure und KI.</p>
+        </div>
+        <hr>
+        <div class="profile-block">
+          <img src="img/eichhoernchen.png" alt="Eichhörnchen" class="avatar" />
+          <h2>🐿️ Matrose-Eichhörnchen</h2>
+          <p>Denkender Snack-Speicher, 100 Tabs offen und immer bereit für neue Ideen.<br>
+             Lieblingsspruch: „Ich hab da was gesehen auf LinkedIn...“</p>
+        </div>
+      </div>
+
+      <!-- Header & Intro -->
       <header>
         <h1>⚓ Captain Azure</h1>
         <p class="subtitle">Technik. Cloud. Screenshots. Direkt vom Deck.</p>
@@ -40,11 +57,13 @@
         <p>Die Seite wird über GitHub Pages gehostet, ohne Tracking, ohne Schnickschnack.</p>
       </section>
 
+      <!-- Beitragsübersicht -->
       <section class="post-grid">
-        <h2>📚 Beiträge</h2>
+        <h2>Beiträge</h2>
         <div id="postGrid" class="grid"></div>
       </section>
 
+      <!-- Script für Beitragskarten -->
       <script>
         fetch("posts/posts.json")
           .then((res) => res.json())
@@ -55,7 +74,9 @@
               container.innerHTML += `
                 <article class="post-card">
                   <a href="posts/${post.slug}">
-                    <img src="${post.image}" alt="${post.title}">
+                    <div class="post-card-image">
+                      <img src="${post.image}" alt="${post.title}">
+                    </div>
                     <h3>${post.title}</h3>
                     <p>${post.teaser}</p>
                   </a>
