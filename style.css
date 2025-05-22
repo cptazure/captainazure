@@ -25,7 +25,7 @@ body {
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.04);
   border-radius: var(--radius);
   max-width: var(--max-width);
-  overflow-x: hidden; /* Scrollen wieder erlaubt */
+  overflow-x: hidden;
 }
 
 /* Layout */
@@ -37,7 +37,7 @@ body {
   border-radius: var(--radius);
 }
 
-/* Sidebar */
+/* Sidebar (nur Desktop) */
 .sidebar {
   width: 260px;
   flex-shrink: 0;
@@ -46,6 +46,11 @@ body {
   border-right: 1px solid #ddd;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
   min-height: 100%;
+}
+
+/* Mobile-Profilanzeige (nur Mobilgeräte) */
+.mobile-profiles {
+  display: none;
 }
 
 .profile-block {
@@ -76,7 +81,7 @@ body {
 /* Hauptinhalt */
 main.main-content {
   flex: 1;
-  padding-left: 1em; /* für visuelle Trennung */
+  padding-left: 1em;
 }
 
 header {
@@ -123,7 +128,7 @@ hr {
   border-top: 1px solid #ddd;
 }
 
-/* Post Grid */
+/* Beitrags-Grid auf der Startseite */
 .post-grid .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -164,6 +169,47 @@ hr {
   color: #444;
 }
 
+/* Einzelner Beitrag */
+.post-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
+.post-content h2 {
+  margin-top: 2em;
+  color: var(--primary);
+  font-size: 1.4em;
+  text-align: left;
+}
+
+.post-content ul {
+  padding-left: 1.4em;
+  margin-bottom: 1.5em;
+  list-style: disc;
+}
+
+.post-content blockquote {
+  margin: 2em 0;
+  padding: 1em;
+  border-left: 4px solid var(--primary);
+  background: #f0f7ff;
+  font-style: italic;
+  color: #333;
+}
+
+.post-image {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.post-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -186,18 +232,35 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive Layout */
 @media (max-width: 850px) {
   .layout {
     flex-direction: column;
   }
 
   .sidebar {
-    width: 100%;
+    display: none;
+  }
+
+  .mobile-profiles {
+    display: block;
     margin-bottom: 2em;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    box-shadow: none;
+    background: #fbfbfb;
+    padding: 1em;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  }
+
+  .mobile-profiles .profile-block {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+  .mobile-profiles .avatar {
+    max-width: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
   }
 
   main.main-content {
