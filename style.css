@@ -65,6 +65,7 @@ body {
   font-size: 0.9em;
   color: #444;
   margin-top: 0.5em;
+  text-align: center;
 }
 
 .avatar {
@@ -298,5 +299,19 @@ footer a:hover {
 
   .post-card img {
     max-height: 120px;
+  }
+
+  .post-card h3 {
+    font-size: 1.1em;
+    line-height: 1.4;
+  }
+
+  .post-text p {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+  .post-date {
+    font-size: 0.9em;
   }
 }
