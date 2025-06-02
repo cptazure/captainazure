@@ -65,45 +65,48 @@
 
       <!-- Script für Beitragskarten -->
 <script>
-  fetch("posts/posts.json")
-    .then((res) => res.json())
-    .then((posts) => {
-      const container = document.getElementById("postGrid");
+fetch("posts/posts.json")
+  .then((res) => res.json())
+  .then((posts) => {
+    const container = document.getElementById("postGrid");
 
-      posts.forEach((post) => {
-        const date = new Date(post.date);
-        const today = new Date();
-        const diffTime = Math.abs(today - date);
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    // Neueste Beiträge zuerst sortieren
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        let relativeDate = "";
+    posts.forEach((post) => {
+      const date = new Date(post.date);
+      const today = new Date();
+      const diffTime = Math.abs(today - date);
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
-        if (diffDays === 0) {
-          relativeDate = "heute";
-        } else if (diffDays === 1) {
-          relativeDate = "gestern";
-        } else {
-          relativeDate = `vor ${diffDays} Tagen`;
-        }
+      let relativeDate = "";
 
-        container.innerHTML += `
-          <a href="posts/${post.slug}" class="post-card-link">
-            <article class="post-card">
-              <div class="post-card-image">
-                <img src="${post.image}" alt="${post.title}">
-              </div>
-              <div class="post-text">
-                <h3>${post.title}</h3>
-                <p>${post.teaser}</p>
-              </div>
-              <div class="post-footer">
-                <p class="post-date">🕓 ${relativeDate}</p>
-              </div>
-            </article>
-          </a>
-        `;
-      });
+      if (diffDays === 0) {
+        relativeDate = "heute";
+      } else if (diffDays === 1) {
+        relativeDate = "gestern";
+      } else {
+        relativeDate = `vor ${diffDays} Tagen`;
+      }
+
+      container.innerHTML += `
+        <a href="posts/${post.slug}" class="post-card-link">
+          <article class="post-card">
+            <div class="post-card-image">
+              <img src="${post.image}" alt="${post.title}">
+            </div>
+            <div class="post-text">
+              <h3>${post.title}</h3>
+              <p>${post.teaser}</p>
+            </div>
+            <div class="post-footer">
+              <p class="post-date">🕓 ${relativeDate}</p>
+            </div>
+          </article>
+        </a>
+      `;
     });
+  });
 </script>
     </main>
   </div>
